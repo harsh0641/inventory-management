@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "NextJS",
+			"path": "."
+		}
+	],
+	"settings": {
+		"prisma.pinToPrisma6": true
+	}
+}
