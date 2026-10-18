@@ -1,7 +1,7 @@
 "use client";
 
 import { LucideIcon } from "lucide-react";
-import { MotionConfig, motion } from "motion/react";
+import { MotionConfig, Variants, motion } from "motion/react";
 import React from "react";
 
 type StatDetail = {
@@ -18,12 +18,12 @@ type StatCardProps = {
   dateRange: string;
 };
 
-const list = {
+const list: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
 };
 
-const row = {
+const row: Variants = {
   hidden: { opacity: 0, y: 6 },
   show: { opacity: 1, y: 0, transition: { duration: 0.28, ease: "easeOut" } },
 };
