@@ -92,13 +92,17 @@ const PurchaseTooltip = ({ active, payload }: any) => {
 
   return (
     <div className="rounded-2xl bg-white dark:bg-[#1E1E1E] border border-gray-100 dark:border-[#2A2A2A] px-3.5 py-2.5 shadow-xl">
-      <p className="text-[10px] font-medium text-gray-400 dark:text-zinc-400">{formatDate(point.date)}</p>
+      <p className="text-[10px] font-medium text-gray-400 dark:text-zinc-400">
+        {formatDate(point.date)}
+      </p>
       <p className="text-sm font-bold text-gray-900 dark:text-[#FFFFFF]">
         ${Math.round(point.totalPurchased).toLocaleString("en")}
       </p>
       <p
         className={`text-[11px] font-semibold ${
-          positive ? "text-emerald-500 dark:text-[#CDDC3C]" : "text-red-500 dark:text-red-400"
+          positive
+            ? "text-emerald-500 dark:text-[#CDDC3C]"
+            : "text-red-500 dark:text-red-400"
         }`}
       >
         {positive ? "+" : "-"}
@@ -121,7 +125,9 @@ const CardPurchaseSummary = () => {
   );
 
   const display =
-    purchaseData[hoveredIndex ?? (purchaseData.length > 0 ? purchaseData.length - 1 : 0)] ?? null;
+    purchaseData[
+      hoveredIndex ?? (purchaseData.length > 0 ? purchaseData.length - 1 : 0)
+    ] ?? null;
 
   const caption = display
     ? hoveredIndex === null
@@ -166,7 +172,9 @@ const CardPurchaseSummary = () => {
           <>
             {/* VALUE */}
             <div className="px-6 pt-4">
-              <p className="text-xs font-medium text-gray-400 dark:text-zinc-400">{caption}</p>
+              <p className="text-xs font-medium text-gray-400 dark:text-zinc-400">
+                {caption}
+              </p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-0.5">
                 <span className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#FFFFFF]">
                   <AnimatedValue value={display.totalPurchased} />
@@ -242,7 +250,6 @@ const CardPurchaseSummary = () => {
                     fill="#141414"
                     stroke={ACCENT}
                     strokeWidth={3}
-                    isFront
                   />
                 </AreaChart>
               </ResponsiveContainer>

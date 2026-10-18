@@ -2,7 +2,7 @@
 
 import { useGetDashboardMetricsQuery } from "../state/api";
 import { ArrowUpRight, EllipsisVertical, ShoppingBag } from "lucide-react";
-import { MotionConfig, motion } from "motion/react";
+import { MotionConfig, Variants, motion } from "motion/react";
 import React from "react";
 import Rating from "../(components)/Rating";
 import Image from "next/image";
@@ -23,12 +23,12 @@ const imageIndexFor = (id: string | number) => {
 const roundButton =
   "flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-colors hover:bg-[#CDDC3C] hover:text-[#141414] dark:bg-[#1E1E1E] dark:text-zinc-300 dark:hover:bg-[#CDDC3C] dark:hover:text-[#141414]";
 
-const list = {
+const list: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.05 } },
 };
 
-const row = {
+const row: Variants = {
   hidden: { opacity: 0, y: 8 },
   show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };
