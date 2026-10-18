@@ -15,14 +15,18 @@ import StatCard from "./StatCard";
 
 const Dashboard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:overflow-auto gap-10 pb-4 custom-grid-rows">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:overflow-auto gap-10 pb-16 custom-grid-rows">
       <CardPopularProducts />
       <CardSalesSummary />
       <CardPurchaseSummary />
       <CardExpenseSummary />
       <StatCard
         title="Customer & Expenses"
-        primaryIcon={<Package className="text-blue-600 w-6 h-6" />}
+        primaryIcon={
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#CDDC3C]/15 text-[#141414] dark:text-[#CDDC3C]">
+            <Package className="h-5 w-5" strokeWidth={2} />
+          </div>
+        }
         dateRange="22 - 29 October 2023"
         details={[
           {
@@ -41,7 +45,11 @@ const Dashboard = () => {
       />
       <StatCard
         title="Dues & Pending Orders"
-        primaryIcon={<CheckCircle className="text-blue-600 w-6 h-6" />}
+        primaryIcon={
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#CDDC3C]/15 text-[#141414] dark:text-[#CDDC3C]">
+            <CheckCircle className="h-5 w-5" strokeWidth={2} />
+          </div>
+        }
         dateRange="22 - 29 October 2023"
         details={[
           {
@@ -60,7 +68,11 @@ const Dashboard = () => {
       />
       <StatCard
         title="Sales & Discount"
-        primaryIcon={<Tag className="text-blue-600 w-6 h-6" />}
+        primaryIcon={
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#CDDC3C]/15 text-[#141414] dark:text-[#CDDC3C]">
+            <Tag className="h-5 w-5" strokeWidth={2} />
+          </div>
+        }
         dateRange="22 - 29 October 2023"
         details={[
           {

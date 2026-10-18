@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 *,
 *::before,
 *::after {
@@ -15,22 +14,84 @@ body,
 .app {
   height: 100%;
   width: 100%;
-  @apply text-sm;
-  @apply bg-gray-500;
-  @apply text-gray-900;
-} 
-
-
-
-@media (min-width:760px){
-  .custome-grid-rows{
-    grid-template-rows: repeat(8,20vh);
-  }
-
+  @apply text-sm text-gray-900 dark:text-zinc-100 antialiased;
+  text-rendering: optimizeLegibility;
 }
-@media (min-width:1280px){
-  .custome-grid-rows{
-    grid-template-rows: repeat(8,7.5vh);
+
+/* ZAPR Canvas Surface: Ultra Clean Soft Gray in Light, Deep Obsidian in Dark */
+body {
+  @apply bg-[#F9FAFB] dark:bg-[#0E0E0E];
+  letter-spacing: -0.005em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.025em;
+}
+
+/* ZAPR Electric Lime Selection Pill */
+::selection {
+  background-color: #CDDC3C;
+  color: #141414;
+}
+
+/* Accessible ZAPR Lime Focus Ring */
+:focus-visible {
+  outline: 2px solid #CDDC3C;
+  outline-offset: 2px;
+}
+
+/* Slim Custom Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.gray.300") transparent;
+}
+
+.dark * {
+  scrollbar-color: #262626 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-300 dark:bg-[#262626];
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-[#333333];
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  
+}
+
+/* Dashboard Grid Rows (Supports both spelling variants) */
+@media (min-width: 760px) {
+  .custom-grid-rows,
+  .custome-grid-rows {
+    grid-template-rows: repeat(8, 20vh);
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-grid-rows,
+  .custome-grid-rows {
+    grid-template-rows: repeat(8, 7.5vh);
+  }
 }
